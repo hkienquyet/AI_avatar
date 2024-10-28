@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Mục tiêu biên dịch là ES6 (ES2015).
+    "lib": ["ES6", "DOM"], // Sử dụng thư viện ES6 và DOM (nếu cần dùng các API của trình duyệt).
+    "module": "ES6", // Sử dụng chuẩn module ES6.
+    "moduleResolution": "node", // Giải quyết module theo cách của Node.js.
+    "outDir": "./dist", // Thư mục đầu ra cho các file biên dịch.
+    "rootDir": "./src", // Thư mục chứa mã nguồn TypeScript.
+    "strict": true, // Bật chế độ kiểm tra nghiêm ngặt.
+    "jsx": "react-jsx", // Thêm cài đặt này để hỗ trợ JSX
+    "esModuleInterop": true, // Cho phép interop với các module CommonJS.
+    "allowSyntheticDefaultImports": true, // Cho phép import mặc định với các module không có export mặc định.
+    "forceConsistentCasingInFileNames": true, // Đảm bảo tên file nhất quán về viết hoa/viết thường.
+    "skipLibCheck": true, // Bỏ qua kiểm tra kiểu trong node_modules.
+    "noImplicitAny": true, // Bật chế độ kiểm tra kiểu cho các biến có kiểu `any` tiềm ẩn.
+    "noImplicitThis": true, // Kiểm tra kiểu `this` một cách chặt chẽ.
+    "noUnusedLocals": true, // Cảnh báo các biến được khai báo nhưng không sử dụng.
+    "noUnusedParameters": true, // Cảnh báo các tham số không sử dụng trong hàm.
+    "noFallthroughCasesInSwitch": true, // Ngăn ngừa các lỗi bỏ sót trong switch-case.
+    "resolveJsonModule": true, // Cho phép import các file JSON.
+    "isolatedModules": true, // Biên dịch từng file riêng biệt, giúp tăng tốc độ.
+    "allowJs": true, // Cho phép sử dụng các file JavaScript.
+    "checkJs": false, // Không kiểm tra các file JavaScript.
+    "noEmit": false // Cho phép biên dịch để tạo file đầu ra trong thư mục `dist`.
+  },
+  "include": ["src"], // Chỉ bao gồm các file trong thư mục src.
+  "exclude": ["node_modules", "dist"] // Loại bỏ thư mục node_modules và dist khỏi việc kiểm tra của TypeScript.
+}
