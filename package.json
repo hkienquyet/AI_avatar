@@ -2,6 +2,7 @@
   "name": "face2avatar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/face2avatar",
   "dependencies": {
     "@dicebear/adventurer": "^9.2.2",
     "@dicebear/avatars": "^4.10.8",

@@ -13,58 +13,32 @@ const App: React.FC = () => {
   };
 
   return (
-    <Box
-      className="app-container"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      p={2}
-    >
+    <Box className="app-container">
       {/* Tiêu đề */}
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography className="title" component="h1" gutterBottom>
         AVATAR THEO CẢM XÚC
       </Typography>
 
       {/* Mô tả */}
-      <Typography variant="subtitle1" component="p" color="textSecondary">
+      <Typography className="description" component="p" color="textSecondary">
         Ứng dụng AI sử dụng model nhận diện cảm xúc của face-api.js
       </Typography>
 
       {/* Container chứa CameraComponent và AvatarComponent */}
-      <Box display="flex" width="100%" height="70vh" mt={4} gap={2}>
+      <Box className="camera-avatar-container">
         {/* Phần CameraComponent */}
-        <Box
-          width="50%"
-          overflow="hidden"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          border={1}
-          borderColor="green"
-          borderRadius={1}
-          p={2}
-        >
+        <Box className="camera-box">
           <CameraComponent onDetectEmotion={handleDetectEmotion} />
         </Box>
 
         {/* Phần AvatarComponent */}
-        <Box
-          width="50%"
-          overflow="hidden"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          border={1}
-          borderColor="blue"
-          borderRadius={1}
-          p={2}
-        >
+        <Box className="avatar-box">
           <AvatarComponent emotion={currentEmotion} />
         </Box>
       </Box>
 
       {/* Thông tin ở cuối trang */}
-      <Typography variant="caption" component="p" color="textSecondary" mt={4}>
+      <Typography className="footer" component="p" color="textSecondary" mt={4}>
         Bài tập về nhà thực hiện bởi Hoàng Kiên Quyết VB2 CNTT03 K68
       </Typography>
     </Box>

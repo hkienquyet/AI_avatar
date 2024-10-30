@@ -16,13 +16,13 @@ const CameraComponent: React.FC<Props> = ({ onDetectEmotion }) => {
     const loadModels = async () => {
       try {
         await faceapi.nets.tinyFaceDetector.loadFromUri(
-          "/models/tiny_face_detector"
+          "models/tiny_face_detector"
         );
         await faceapi.nets.faceExpressionNet.loadFromUri(
-          "/models/face_expression"
+          "models/face_expression"
         );
         await faceapi.nets.faceLandmark68Net.loadFromUri(
-          "/models/face_landmark_68"
+          "models/face_landmark_68"
         );
         setModelsLoaded(true);
       } catch (error) {
@@ -32,7 +32,9 @@ const CameraComponent: React.FC<Props> = ({ onDetectEmotion }) => {
 
     const startVideo = async () => {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: {} });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "user" },
+        });
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
@@ -102,7 +104,7 @@ const CameraComponent: React.FC<Props> = ({ onDetectEmotion }) => {
 
   useEffect(() => {
     if (modelsLoaded) {
-      const intervalId = setInterval(detectEmotion, 1000);
+      const intervalId = setInterval(detectEmotion, 500);
       return () => clearInterval(intervalId);
     }
   }, [modelsLoaded, detectEmotion]);
@@ -119,6 +121,7 @@ const CameraComponent: React.FC<Props> = ({ onDetectEmotion }) => {
         ref={videoRef}
         autoPlay
         muted
+        playsInline
         width="100%"
         height="auto"
         sx={{
